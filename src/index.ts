@@ -36,11 +36,12 @@ function addListItem(task: Task): void {
     const item = document.createElement('li');
     const label = document.createElement('label');
     const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
     checkbox.addEventListener('change', () => {
         task.completed = checkbox.checked;
         saveTasks();
     });
-    checkbox.type = 'checkbox';
+
     checkbox.checked = task.completed;
     label.append(checkbox, task.title);
     item.append(label);
